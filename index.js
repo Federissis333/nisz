@@ -40,7 +40,20 @@ client.on('messageCreate', async (message) => {
         const action = args[1];
         const value = parseInt(args[2]);
         await bank(message, action, value);
+            if (content.startsWith('!perfil')) {
+                        await perfil(message);
+                            }
+
+                                if (content.startsWith('!setfundo')) {
+                                        const fundo = content.split(' ')[1];
+                                                if (!fundo) {
+                                                            return message.reply('Por favor, informe o nome do fundo. Exemplo: `!setfundo fundo1.png`');
+                                                                    }
+                                                                            await setFundo(message, 
+                                                                            fundo);
+                                                                                }
+        
     }
 });
 
-client.login('MTMzNDMwMzM4Mzc5NjA2MDIwMA.GyoBDp.9bju3NgexVo5aoNu4P16XZF1vj5FHhK253TmlY');
+client.login('');
